@@ -1,0 +1,14 @@
+<div class="content">
+
+@for(film of films ; track film.titre ; let index = $index){
+  <mat-card (click)="selectFilm(index)" appearance="outlined"><h1>{{ film.titre }}</h1></mat-card>
+}
+@if(selectedFilm){
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>{{selectedFilm.titre}}</mat-card-title>
+    </mat-card-header>
+    <img mat-card-image [src]="selectedFilm.affiche">
+  </mat-card>
+}
+</div>
